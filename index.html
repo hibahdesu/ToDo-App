@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="styles.css">
     <title>ToDo App</title>
 </head>
-<body class="flex">
+<body class="flex center">
     <div class="container flex">
 
         <div class="header">
             <h1>ToDo App</h1>
         </div>
 
-        <div class="add">
+        <div class="add flex">
             <button class="btn addBtn">
                 <span class="material-symbols-outlined">
                  add_2
@@ -22,8 +22,8 @@
             </button>
         </div>
 
-        <div class="tasks-container">
-            <div class="task">
+        <div class="tasks-container flex column gap-m">
+            <!-- <div class="task">
                 <div class="task-content">
                     <h2>Task 1</h2>
                     <div class="date-container flex">
@@ -52,10 +52,40 @@
                         </span>
                     </button>
                 </div>
-            </div>
+            </div> -->
         </div>
 
 
+    </div>
+
+    <div class="add-container flex column gap-m padding-m border-s hidden">
+        <div class="add-header">
+            <h2>Add Task</h2>
+            <button class="close-btn btn">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </button>
+        </div>
+
+        <form id="addForm" class="flex column gap-m">
+            <div class="task-name-container flex column gap-sm">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" name="taskName" class="border-s padding-m" placeholder="Task Name" required>
+            </div>
+
+            <div class="task-desc-container flex column gap-sm">
+                <label for="taskDesc">Task Description:</label>
+                <textarea name="taskDesc" id="taskDesc" class="border-s padding-m" placeholder="Task Description" required></textarea>
+            </div>
+            
+            <div class="task-date-container flex column gap-sm">
+                <label for="taskDate">Task Date:</label>
+                <input type="date" id="taskDate" name="taskDate" class="border-s padding-m" required>
+            </div>
+
+            <button type="submit" class="task-btn padding-sm border-s">Add Task</button>
+        </form>
     </div>
 
 
