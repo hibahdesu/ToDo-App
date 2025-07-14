@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root {
+    --primary-color: #213555;
+    --secondary-color: #F5EFE7;
+    --third-colr: #3E5879;
+    --forth-color: #D8C4B6;
+    --shadow: 0px 0px 10px rgba(62, 88, 121, 0.1);
+    --shadow-2: 0px 6px 6px rgba(62, 88, 121, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: "Winky Rough", sans-serif;
+    height: 100vh;
+}
+
+.container {
+    background: var(--forth-color);
+    flex-direction: column;
+    width: 80%;
+}
+
+.header {
+    text-align: center;
+    width: 100%;
+    color: var(--forth-color);
+    background-color: var(--secondary-color);
+}
+
+.add {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn {
+    padding: .5em;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px var(--shadow);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.addBtn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.tasks-container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    padding: 1em;
+}
+
+.task {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    background-color: var(--secondary-color);
+    border-radius: .5em;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* background: #000; */
+}
+
+.task:hover {
+    box-shadow: var(--shadow-2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+.task-content {
+    display: flex;
+    flex-direction: column;
+    /* width: 60%; */
+    /* align-items: center; */
+    justify-content: flex-start;
+    /* background-color: #213555; */
+    color: var(--primary-color)
+}
+
+.task-actions {
+    display: flex;
+    /* align-items: center; */
+    width: 20%;
+    justify-content: space-between;
+    /* background-color: #213555; */
+    /* gap: 1em; */
+}
+
+.delete {
+    background-color: #D80000;
+}
+
+.update {
+    background-color: var(--third-colr);
+}
+
+.done {
+    background-color: var(--forth-color);
+}
+
+.date-container {
+    color: var(--third-colr);
+}
