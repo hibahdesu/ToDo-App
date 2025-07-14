@@ -45,16 +45,16 @@ closeBtn.addEventListener('click', () => {
     document.body.classList.remove('modal-open');
 });
 
-taskBtn.addEventListener('submit', () => {
+taskBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    
-    let title = taskName.value.trim();
+
+    let taskTitle = taskName.value.trim();
     let description = taskDesc.value.trim();
     let date = taskDate.value;
 
-    if (title && description && date) {
+    if (taskTitle && description && date) {
         tasks.push({
-            title: title,
+            title: taskTitle,
             description: description,
             date: date,
             finished: false
@@ -66,14 +66,17 @@ taskBtn.addEventListener('submit', () => {
         addContainer.classList.add('hidden');
         mainContainer.classList.remove('blurred');
         document.body.classList.remove('modal-open');
-        // tasksContainer.innerHTML = '';
+        
+        showTasks();
 
     }
 })
 
-tasksContainer.innerHTML = '';
 
-tasksContainer.innerHTML = tasks.map(task => `
+function showTasks() {
+    tasksContainer.innerHTML = '';
+    
+    tasksContainer.innerHTML = tasks.map(task => `
     <div class="task flex space-between center gap-m">
                 <div class="task-content flex column gap-sm">
                     <h2>${task.title}</h2>
@@ -107,3 +110,9 @@ tasksContainer.innerHTML = tasks.map(task => `
                 </div>
             </div>
     `).join('');
+    
+}
+// tasksContainer.innerHTML = '';
+
+showTasks();
+
