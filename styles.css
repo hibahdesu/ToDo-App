@@ -207,6 +207,10 @@ input, textarea {
     background: transparent;
 }
 
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
 
 .add-header {
     position: relative;
