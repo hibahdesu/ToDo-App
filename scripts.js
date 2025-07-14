@@ -31,6 +31,7 @@ let taskDate = document.querySelector('#taskDate');
 let taskBtn = document.querySelector('.task-btn');
 
 
+
 console.log(taskName.value);
 
 addBtn.addEventListener('click', () => {
@@ -75,7 +76,7 @@ taskBtn.addEventListener('click', (e) => {
 
 function showTasks() {
     tasksContainer.innerHTML = '';
-    
+
     tasksContainer.innerHTML = tasks.map(task => `
     <div class="task flex space-between center gap-m">
                 <div class="task-content flex column gap-sm">
@@ -110,9 +111,31 @@ function showTasks() {
                 </div>
             </div>
     `).join('');
-    
+
+
+    let deleteBtns = document.querySelectorAll('.delete');
+
+    deleteBtns.forEach(deleteBtn => {
+        deleteBtn.addEventListener('click', (e) => {
+        console.log(e.target.closest('.delete'));
+        let taskIndex = e.target.closest('.delete').getAttribute('data-index');
+        console.log(taskIndex);
+        deleteTask(taskIndex);
+        
+    });
+
+    }) 
 }
-// tasksContainer.innerHTML = '';
+
+
+
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    showTasks();
+}
 
 showTasks();
+
+
+
 
