@@ -72,7 +72,6 @@ body {
     width: 100%;
     height: 100%;
     flex-direction: column;
-
     padding: 1em;
 }
 
@@ -127,4 +126,6 @@ body {
 
 .date-container {
     color: var(--third-colr);
+    justify-content: start;
+    gap: .5em;
 }
