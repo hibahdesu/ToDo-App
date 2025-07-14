@@ -6,13 +6,13 @@ let tasks = [
         "finished": false
     },
     {
-        "title": "Complete the task",
+        "title": "Task 2",
         "date": "2023-10-01",
         "description": "Finish the assigned task by the end of the day.",
         "finished": false
     },
     {
-        "title": "Complete the task",
+        "title": "Task 3",
         "date": "2023-10-01",
         "description": "Finish the assigned task by the end of the day.",
         "finished": false
@@ -29,10 +29,14 @@ let taskName = document.querySelector('#taskName');
 let taskDesc = document.querySelector('#taskDesc');
 let taskDate = document.querySelector('#taskDate');
 let taskBtn = document.querySelector('.task-btn');
+let deleteContainer = document.querySelector('.delete-container');
+let deleteButton = document.querySelector('.delete-btn');
+let cancleBtn = document.querySelector('.cancle-btn');
+let deleteConfirmation = document.querySelector('.delete-confirmation');
 
 
 
-console.log(taskName.value);
+// console.log(deleteBtn);
 
 addBtn.addEventListener('click', () => {
     addContainer.classList.remove('hidden');
@@ -73,61 +77,69 @@ taskBtn.addEventListener('click', (e) => {
     }
 })
 
+let currentTaskIndex = null;
 
 function showTasks() {
-    tasksContainer.innerHTML = '';
-
-    tasksContainer.innerHTML = tasks.map(task => `
-    <div class="task flex space-between center gap-m">
-                <div class="task-content flex column gap-sm">
-                    <h2>${task.title}</h2>
-                    <p>${task.description}</p>
-                    <div class="date-container flex gap-sm">
-                        <span class="material-symbols-outlined">
-                            calendar_month
-                        </span>
-                        <span class="date">${task.date}</span>
-                    </div>
-                </div>
-
-                <div class="task-actions flex gap-m">
-                    <button class="delete btn">
-                        <span class="material-symbols-outlined">
-                            delete
-                        </span>
-                    </button>
-
-                    <button class="update btn">
-                        <span class="material-symbols-outlined">
-                            edit
-                        </span>
-                    </button>
-
-                    <button class="done btn">
-                        <span class="material-symbols-outlined">
-                            check
-                        </span>
-                    </button>
+    tasksContainer.innerHTML = tasks.map((task, index) => `
+        <div class="task flex space-between center gap-m">
+            <div class="task-content flex column gap-sm">
+                <h2>${task.title}</h2>
+                <p>${task.description}</p>
+                <div class="date-container flex gap-sm">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    <span class="date">${task.date}</span>
                 </div>
             </div>
+
+            <div class="task-actions flex gap-m">
+                <button class="delete btn" data-index="${index}">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
+
+                <button class="update btn">
+                    <span class="material-symbols-outlined">edit</span>
+                </button>
+
+                <button class="done btn">
+                    <span class="material-symbols-outlined">check</span>
+                </button>
+            </div>
+        </div>
     `).join('');
 
+    const deleteBtns = document.querySelectorAll('.delete');
+    deleteBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const button = e.currentTarget;
+            currentTaskIndex = button.getAttribute('data-index');
+            const task = tasks[currentTaskIndex];
 
-    let deleteBtns = document.querySelectorAll('.delete');
+            deleteConfirmation.innerHTML = `Are you sure you want to delete "${task.title}"?`;
 
-    deleteBtns.forEach(deleteBtn => {
-        deleteBtn.addEventListener('click', (e) => {
-        console.log(e.target.closest('.delete'));
-        let taskIndex = e.target.closest('.delete').getAttribute('data-index');
-        console.log(taskIndex);
-        deleteTask(taskIndex);
-        
+            deleteContainer.classList.remove('hidden');
+            mainContainer.classList.add('blurred');
+            document.body.classList.add('modal-open');
+        });
     });
-
-    }) 
 }
 
+// Confirm delete
+deleteButton.addEventListener('click', () => {
+    if (currentTaskIndex !== null) {
+        deleteTask(currentTaskIndex);
+        currentTaskIndex = null;
+        deleteContainer.classList.add('hidden');
+        mainContainer.classList.remove('blurred');
+        document.body.classList.remove('modal-open');
+    }
+});
 
+// Cancel delete
+cancleBtn.addEventListener('click', () => {
+    deleteContainer.classList.add('hidden');
+    mainContainer.classList.remove('blurred');
+    document.body.classList.remove('modal-open');
+});
 
 function deleteTask(index) {
     tasks.splice(index, 1);
@@ -135,7 +147,3 @@ function deleteTask(index) {
 }
 
 showTasks();
-
-
-
-

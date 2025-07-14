@@ -84,8 +84,27 @@
                 <input type="date" id="taskDate" name="taskDate" class="border-s padding-m" required>
             </div>
 
-            <button type="submit" class="task-btn padding-sm border-s">Add Task</button>
+            <button type="submit" class="task-btn padding-sm border-s end">Add Task</button>
         </form>
+    </div>
+
+
+    <div class="delete-container flex column gap-m padding-m border-s hidden">
+        <div class="delete-header flex column gap-m">
+            <h2>Delete Task</h2>
+
+            <p class="delete-confirmation">Are you sure you want to delete  ?</p>
+            <!-- <button class="close-btn btn">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </button> -->
+        </div>
+
+        <div class="delete-btns flex gap-m end">
+            <button type="submit" class="delete-btn padding-sm border-s">Delete Task</button>
+            <button type="submit" class="cancle-btn padding-sm border-s">Cancle</button>
+        </div>
     </div>
 
 

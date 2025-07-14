@@ -87,11 +87,17 @@ body.modal-open::before {
     padding: 1em 1.5em;
 }
 
-
 button {
     cursor: pointer;
 }
 
+.end {
+    align-self: end;
+}
+
+.start {
+    align-self: start;
+}
 
 .container {
     background: var(--forth-color);
@@ -180,7 +186,7 @@ button {
     justify-content: start;
 }
 
-.add-container {
+.add-container, .delete-container {
     width: 50%;
     position: absolute;
     z-index: 1000;
@@ -212,7 +218,7 @@ input:focus, textarea:focus {
     border-color: var(--secondary-color);
 }
 
-.add-header {
+.add-header, .delete-header {
     position: relative;
 }
 
@@ -236,7 +242,7 @@ input:focus, textarea:focus {
    color: var(--primary-color);
    font-family: var(--font);
    font-size: 1.2rem;
-   align-self: end;
+   
 }
 
 .task-btn:hover {
@@ -244,6 +250,10 @@ input:focus, textarea:focus {
     color: var(--forth-color);
     transition: all 0.3s ease-in-out;
 }
+
+/* .delete-btns  {
+    align-self: end;
+} */
 
 .hidden {
     /* visibility: hidden;
