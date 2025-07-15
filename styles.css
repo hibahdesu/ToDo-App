@@ -14,13 +14,7 @@
     --success-color: #6DA57F;       /* muted green */
     --success-bg: #E6F4EA;          /* light green background */
 
-    /* ❌ Close / Cancel / Error */
-    --danger-color: #C94C4C;        /* soft red */
-    --danger-bg: #FCEAEA;           /* light red background */
-
-    /* ℹ️ Info or neutral feedback */
-    --info-color: #4C7AA3;          /* steel blue */
-    --info-bg: #E7F0FA;  
+    --danger-color: #C94C4C;       
 
     /* 🟡 Edit / Warning / Modify */
     --edit-color: #D4A373;         /* warm amber */
@@ -170,7 +164,7 @@ button {
 }
 
 .delete {
-    background-color: #D80000;
+    background-color: var(--danger-color);
 }
 
 .update {
@@ -207,6 +201,7 @@ button {
 .task-btn, input, textarea {
     color: var(--secondary-color);
 }
+
 input, textarea {
     width: 100%;
     padding: .5em;
@@ -231,6 +226,7 @@ input:focus, textarea:focus {
 .close-btn:hover {
     color: var(--danger-color);
 }
+
 .close-btn {
     position: absolute;
     right: 0;
