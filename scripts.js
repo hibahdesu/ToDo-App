@@ -182,29 +182,31 @@ cancleBtn.addEventListener('click', () => {
 });
 
 
-// Confirm edit
-// editButton.addEventListener('click', () => {
-//     if (currentTaskIndex !== null) {
-//         editTask(currentTaskIndex);
-//         currentTaskIndex = null;
-//         editContainer.classList.add('hidden');
-//         mainContainer.classList.remove('blurred');
-//         document.body.classList.remove('modal-open');
-//     }
-// });
+editForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-// // Cancel edit
-// editCancleBtn.addEventListener('click', () => {
-//     editContainer.classList.add('hidden');
-//     mainContainer.classList.remove('blurred');
-//     document.body.classList.remove('modal-open');
-// });
+    if (currentTaskIndex !== null) {
+        tasks[currentTaskIndex] = {
+            ...tasks[currentTaskIndex],
+            title: editTaskName.value.trim(),
+            description: editTaskDesc.value.trim(),
+            date: editTaskDate.value
+        };
 
+        showTasks();
+        editContainer.classList.add('hidden');
+        mainContainer.classList.remove('blurred');
+        document.body.classList.remove('modal-open');
+        currentTaskIndex = null;
+    }
+});
 
+closeEditBtn.addEventListener('click', () => {
+    editContainer.classList.add('hidden');
+    mainContainer.classList.remove('blurred');
+    document.body.classList.remove('modal-open');
+    currentTaskIndex = null;
+});
 
-
-function editTask(index) {
-    alert('This is the edit part');
-}
 
 showTasks();
