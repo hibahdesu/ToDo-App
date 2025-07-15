@@ -102,6 +102,35 @@
         </div>
     </div>
 
+    <div class="edit-container flex column gap-m padding-m border-s ">
+        <div class="edit-header">
+            <h2>Edit Task</h2>
+            <button class="close-edit-btn btn">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+
+        <form id="editForm" class="flex column gap-m">
+            <div class="task-name-container flex column gap-sm">
+                <label for="editTaskName">Task Name:</label>
+                <input type="text" id="editTaskName" name="editTaskName" class="border-s padding-m" required>
+            </div>
+
+            <div class="task-desc-container flex column gap-sm">
+                <label for="editTaskDesc">Task Description:</label>
+                <textarea id="editTaskDesc" name="editTaskDesc" class="border-s padding-m" required></textarea>
+            </div>
+            
+            <div class="task-date-container flex column gap-sm">
+                <label for="editTaskDate">Task Date:</label>
+                <input type="date" id="editTaskDate" name="editTaskDate" class="border-s padding-m" required>
+            </div>
+
+            <button type="submit" class="edit-btn padding-sm border-s end">Update Task</button>
+        </form>
+    </div>
+
+
 
     <script src="scripts.js"></script>
 </body>
