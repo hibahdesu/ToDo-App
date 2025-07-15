@@ -180,7 +180,7 @@ button {
     justify-content: start;
 }
 
-.add-container, .delete-container {
+.add-container, .delete-container, .edit-container {
     width: 50%;
     position: absolute;
     z-index: 1000;
@@ -213,35 +213,39 @@ input:focus, textarea:focus {
     border-color: var(--secondary-color);
 }
 
-.add-header, .delete-header {
+.add-header, .delete-header, .edit-header {
     position: relative;
 }
 
-.close-btn, .task-btn {
+.add-header h2, .delete-header h2, .edit-header h2 {
+    margin-bottom: 0.5em;
+}
+
+.close-btn, .task-btn, .close-edit-btn {
     background: transparent;
     color: var(--forth-color);
     border: 1px solid var(--forth-color);
 }
 
-.close-btn:hover {
+.close-btn:hover, .close-edit-btn:hover {
     color: var(--danger-color);
 }
 
-.close-btn {
+.close-btn, .close-edit-btn {
     position: absolute;
     right: 0;
     top: 0;
 }
 
-.task-btn {
+.task-btn, .edit-btn {
    background: var(--forth-color);
    color: var(--primary-color);
    font-family: var(--font);
    font-size: 1.2rem;
-   
+   border: 1px solid var(--forth-color);
 }
 
-.task-btn:hover {
+.task-btn:hover, .edit-btn:hover {
     background: transparent;
     color: var(--forth-color);
     transition: all 0.3s ease-in-out;
@@ -278,6 +282,7 @@ input:focus, textarea:focus {
     color: var(--third-colr);
     border-color: var(--third-colr);
 }
+
 
 .hidden {
     /* visibility: hidden;
