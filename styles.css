@@ -305,6 +305,10 @@ input:focus, textarea:focus {
 
 .finished {
     background-color: var(--success-color);
-    opacity: 0.6;
-    text-decoration: line-through;
+    opacity: 0.8;
+    /* text-decoration: line-through; */
+}
+
+.canceled {
+    background-color: var(--danger-color);
 }

@@ -114,9 +114,14 @@ function showTasks() {
                     <span class="material-symbols-outlined">edit</span>
                 </button>
 
-                <button class="done btn" data-index="${index}">
-                    <span class="material-symbols-outlined">check</span>
-                </button>
+                ${task.finished ? `
+                     <button class="done btn canceled" data-index="${index}">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>` : `
+                     <button class="done btn" data-index="${index}">
+                        <span class="material-symbols-outlined">check</span>
+                    </button>`}
+               
             </div>
         </div>
     `).join('');
@@ -166,7 +171,6 @@ function showTasks() {
     });
 
 }
-
 
 function deleteTask(index) {
     tasks.splice(index, 1);
@@ -220,7 +224,13 @@ closeEditBtn.addEventListener('click', () => {
 
 function finishedTask(index) {
     let task = tasks[index];
-    task.finished = true;
+
+    if (task.finished) {
+        task.finished = false;
+    } else {
+        task.finished = true;
+    }
+    
     console.log(task);
     showTasks();
 }
