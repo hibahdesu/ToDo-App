@@ -15,7 +15,7 @@ let tasks = [
         "title": "Task 3",
         "date": "2023-10-01",
         "description": "Finish the assigned task by the end of the day.",
-        "finished": false
+        "finished": true
     },
 ];
 
@@ -95,7 +95,7 @@ let currentTaskIndex = null;
 
 function showTasks() {
     tasksContainer.innerHTML = tasks.map((task, index) => `
-        <div class="task flex space-between center gap-m finished">
+        <div class="task flex space-between center gap-m ${task.finished ? 'finished' : ''}">
             <div class="task-content flex column gap-sm">
                 <h2>${task.title}</h2>
                 <p>${task.description}</p>
@@ -114,7 +114,7 @@ function showTasks() {
                     <span class="material-symbols-outlined">edit</span>
                 </button>
 
-                <button class="done btn finishedBtn" data-index="${index} ">
+                <button class="done btn" data-index="${index}">
                     <span class="material-symbols-outlined">check</span>
                 </button>
             </div>
@@ -155,10 +155,15 @@ function showTasks() {
         });
     });
 
+    let tasksDiv = document.querySelectorAll('.task');
     let doneBtns = document.querySelectorAll('.done');
     doneBtns.forEach(btn => {
-
-    })
+        btn.addEventListener('click', (e) =>  {
+            const button = e.currentTarget;
+            currentTaskIndex = button.getAttribute('data-index');
+            finishedTask(currentTaskIndex)
+        })
+    });
 
 }
 
@@ -213,5 +218,11 @@ closeEditBtn.addEventListener('click', () => {
     currentTaskIndex = null;
 });
 
+function finishedTask(index) {
+    let task = tasks[index];
+    task.finished = true;
+    console.log(task);
+    showTasks();
+}
 
 showTasks();
