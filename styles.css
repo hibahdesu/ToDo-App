@@ -297,3 +297,12 @@ input:focus, textarea:focus {
     pointer-events: none;
     user-select: none;
 }
+
+.finishedBtn {
+    background-color: var(--success-bg);
+    color: var(--success-color)
+}
+
+.finished {
+    background-color: var(--success-color);
+}
