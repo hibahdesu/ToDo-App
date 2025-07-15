@@ -155,6 +155,9 @@ function showTasks() {
         });
     });
 
+    let doneBtn = document.querySelectorAll('.done');
+    
+
 }
 
 
