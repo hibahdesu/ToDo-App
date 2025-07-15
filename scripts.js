@@ -224,14 +224,7 @@ closeEditBtn.addEventListener('click', () => {
 
 function finishedTask(index) {
     let task = tasks[index];
-
-    if (task.finished) {
-        task.finished = false;
-    } else {
-        task.finished = true;
-    }
-    
-    console.log(task);
+    task.finished = !task.finished
     showTasks();
 }
 
