@@ -23,16 +23,30 @@ let tasks = [
 let tasksContainer = document.querySelector('.tasks-container');
 let addBtn = document.querySelector('.addBtn');
 let mainContainer = document.querySelector('.container');
+
+// Add Part
 let closeBtn = document.querySelector('.close-btn');
 let addContainer = document.querySelector('.add-container');
 let taskName = document.querySelector('#taskName');
 let taskDesc = document.querySelector('#taskDesc');
 let taskDate = document.querySelector('#taskDate');
 let taskBtn = document.querySelector('.task-btn');
+
+// Delete Part
 let deleteContainer = document.querySelector('.delete-container');
 let deleteButton = document.querySelector('.delete-btn');
 let cancleBtn = document.querySelector('.cancle-btn');
 let deleteConfirmation = document.querySelector('.delete-confirmation');
+
+// Edit Part
+let editContainer = document.querySelector('.edit-container');
+let closeEditBtn = document.querySelector('.close-edit-btn');
+let editForm = document.querySelector('#editForm');
+let editTaskName = document.querySelector('#editTaskName');
+let editTaskDesc = document.querySelector('#editTaskDesc');
+let editTaskDate = document.querySelector('#editTaskDate');
+let editBtn = document.querySelector('.edit-btn');
+
 
 
 
@@ -96,11 +110,11 @@ function showTasks() {
                     <span class="material-symbols-outlined">delete</span>
                 </button>
 
-                <button class="update btn">
+                <button class="update btn" data-index="${index}">
                     <span class="material-symbols-outlined">edit</span>
                 </button>
 
-                <button class="done btn">
+                <button class="done btn" data-index="${index}">
                     <span class="material-symbols-outlined">check</span>
                 </button>
             </div>
@@ -121,6 +135,32 @@ function showTasks() {
             document.body.classList.add('modal-open');
         });
     });
+
+    const updateBtns = document.querySelectorAll('.update');
+    updateBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const button = e.currentTarget;
+            currentTaskIndex = button.getAttribute('data-index');
+            const task = tasks[currentTaskIndex];
+
+            // Pre-fill the edit form
+            editTaskName.value = task.title;
+            editTaskDesc.value = task.description;
+            editTaskDate.value = task.date;
+
+            // Show modal
+            editContainer.classList.remove('hidden');
+            mainContainer.classList.add('blurred');
+            document.body.classList.add('modal-open');
+        });
+    });
+
+}
+
+
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    showTasks();
 }
 
 // Confirm delete
@@ -141,9 +181,30 @@ cancleBtn.addEventListener('click', () => {
     document.body.classList.remove('modal-open');
 });
 
-function deleteTask(index) {
-    tasks.splice(index, 1);
-    showTasks();
+
+// Confirm edit
+// editButton.addEventListener('click', () => {
+//     if (currentTaskIndex !== null) {
+//         editTask(currentTaskIndex);
+//         currentTaskIndex = null;
+//         editContainer.classList.add('hidden');
+//         mainContainer.classList.remove('blurred');
+//         document.body.classList.remove('modal-open');
+//     }
+// });
+
+// // Cancel edit
+// editCancleBtn.addEventListener('click', () => {
+//     editContainer.classList.add('hidden');
+//     mainContainer.classList.remove('blurred');
+//     document.body.classList.remove('modal-open');
+// });
+
+
+
+
+function editTask(index) {
+    alert('This is the edit part');
 }
 
 showTasks();
