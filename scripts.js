@@ -20,6 +20,8 @@ let tasks = [
 ];
 
 
+tasks = JSON.parse(localStorage.getItem('tasks'));
+
 let tasksContainer = document.querySelector('.tasks-container');
 let addBtn = document.querySelector('.addBtn');
 let mainContainer = document.querySelector('.container');
@@ -79,9 +81,7 @@ taskBtn.addEventListener('click', (e) => {
             finished: false
         });
 
-        let tasksString = JSON.stringify(tasks);
-
-        localStorage.setItem('tasks', tasksString)
+        storingTasks();
 
         taskName.value = '';
         taskDesc.value = '';
@@ -178,6 +178,9 @@ function showTasks() {
 
 function deleteTask(index) {
     tasks.splice(index, 1);
+
+    storingTasks();
+
     showTasks();
 }
 
@@ -211,6 +214,8 @@ editForm.addEventListener('submit', (e) => {
             date: editTaskDate.value
         };
 
+        storingTasks();
+
         showTasks();
         editContainer.classList.add('hidden');
         mainContainer.classList.remove('blurred');
@@ -228,8 +233,19 @@ closeEditBtn.addEventListener('click', () => {
 
 function finishedTask(index) {
     let task = tasks[index];
-    task.finished = !task.finished
+    task.finished = !task.finished;
+
+    storingTasks();
+    
     showTasks();
 }
 
+
+
+// Storage 
+function storingTasks() {
+    let tasksString = JSON.stringify(tasks);
+
+    localStorage.setItem('tasks', tasksString);
+}
 showTasks();
