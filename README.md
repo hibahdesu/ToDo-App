@@ -45,6 +45,7 @@ A simple, modern, and responsive **ToDo App** built with **HTML**, **CSS**, and 
 - scripts.js # App logic
 - README.md # Documentation
 
+---
 
 ## 🗃️ Task Storage
 
@@ -56,6 +57,9 @@ A simple, modern, and responsive **ToDo App** built with **HTML**, **CSS**, and 
 
 - To reset the app, open DevTools → Application → Clear localStorage.
 
+---
+
+
 ## 📱 Responsive Design
 Built mobile-first and adapts beautifully across all screen sizes:
 
@@ -64,6 +68,8 @@ Built mobile-first and adapts beautifully across all screen sizes:
 - 🖥️ Scales perfectly on desktop
 
 - 🧭 Touch-friendly buttons and modals
+
+---
 
 
 ## ⚙️ Customization Tips
@@ -75,6 +81,8 @@ You can easily modify:
 
 - 🔣 Icons using Material Symbols
 
+---
+
 
 ## 🎯 App Functionality Overview
 
@@ -85,3 +93,5 @@ You can easily modify:
 | **Delete Task**   | 🗑️ `delete` | Opens a confirmation before deleting a task    |
 | **Complete Task** | ✅ `check`    | Marks a task as completed (green background)   |
 | **Cancel Task**   | ❌ `close`    | Reverts a completed task to its original state |
+
+---
