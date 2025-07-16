@@ -90,7 +90,6 @@ button {
     width: 100%;
     max-width: 800px;
     margin: auto;
-    padding: 1em;
     border-radius: .5em;
 }
 .header {
@@ -99,8 +98,11 @@ button {
     color: var(--forth-color);
     background-color: var(--secondary-color);
     padding: 1em 0;
-    border-top-left-radius: .5em;
-    border-top-right-radius: .5em;
+    border-radius: .5em;
+}
+
+.add {
+    color: var(--primary-color);
 }
 
 /* ===================== TASKS ===================== */

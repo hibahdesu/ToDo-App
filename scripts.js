@@ -51,14 +51,12 @@ let editBtn = document.querySelector('.edit-btn');
 
 addBtn.addEventListener('click', () => {
     addContainer.classList.remove('hidden');
-    mainContainer.classList.add('blurred');
-    document.body.classList.add('modal-open');
+    addLayout();
 });
 
 closeBtn.addEventListener('click', () => {
     addContainer.classList.add('hidden');
-    mainContainer.classList.remove('blurred');
-    document.body.classList.remove('modal-open');
+    removeLayout();
 });
 
 taskBtn.addEventListener('click', (e) => {
@@ -82,8 +80,7 @@ taskBtn.addEventListener('click', (e) => {
         taskDesc.value = '';
         taskDate.value = '';
         addContainer.classList.add('hidden');
-        mainContainer.classList.remove('blurred');
-        document.body.classList.remove('modal-open');
+        removeLayout();
         
         showTasks();
 
@@ -135,8 +132,7 @@ function showTasks() {
             deleteConfirmation.innerHTML = `Are you sure you want to delete "${task.title}"?`;
 
             deleteContainer.classList.remove('hidden');
-            mainContainer.classList.add('blurred');
-            document.body.classList.add('modal-open');
+            addLayout();
         });
     });
 
@@ -154,8 +150,7 @@ function showTasks() {
 
             // Show modal
             editContainer.classList.remove('hidden');
-            mainContainer.classList.add('blurred');
-            document.body.classList.add('modal-open');
+            addLayout();
         });
     });
 
@@ -185,16 +180,14 @@ deleteButton.addEventListener('click', () => {
         deleteTask(currentTaskIndex);
         currentTaskIndex = null;
         deleteContainer.classList.add('hidden');
-        mainContainer.classList.remove('blurred');
-        document.body.classList.remove('modal-open');
+        removeLayout();
     }
 });
 
 // Cancel delete
 cancleBtn.addEventListener('click', () => {
     deleteContainer.classList.add('hidden');
-    mainContainer.classList.remove('blurred');
-    document.body.classList.remove('modal-open');
+    removeLayout();
 });
 
 
@@ -213,16 +206,14 @@ editForm.addEventListener('submit', (e) => {
 
         showTasks();
         editContainer.classList.add('hidden');
-        mainContainer.classList.remove('blurred');
-        document.body.classList.remove('modal-open');
+        removeLayout();
         currentTaskIndex = null;
     }
 });
 
 closeEditBtn.addEventListener('click', () => {
     editContainer.classList.add('hidden');
-    mainContainer.classList.remove('blurred');
-    document.body.classList.remove('modal-open');
+    removeLayout();
     currentTaskIndex = null;
 });
 
@@ -243,4 +234,13 @@ function storingTasks() {
     localStorage.setItem('tasks', tasksString);
 }
 
+function removeLayout() {
+    mainContainer.classList.remove('blurred');
+    document.body.classList.remove('modal-open');
+}
+
+function addLayout() {
+    mainContainer.classList.add('blurred');
+    document.body.classList.add('modal-open');
+}
 showTasks();
