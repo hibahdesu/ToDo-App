@@ -35,8 +35,48 @@ A simple, modern, and responsive **ToDo App** built with **HTML**, **CSS**, and 
 ## 📂 Project Structure
 
 ### ToDo-App/
-│
-├── index.html # Main HTML file
-├── styles.css # App styling
-├── scripts.js # App logic
-└── README.md # Documentation
+
+- index.html # Main HTML file
+- styles.css # App styling
+- scripts.js # App logic
+- README.md # Documentation
+
+
+## 🗃️ Task Storage
+
+- This ToDo App uses your browser's localStorage for saving tasks:
+
+- Tasks persist even after you close or refresh the page.
+
+- Data is stored per browser – it won’t sync across devices or browsers.
+
+- To reset the app, open DevTools → Application → Clear localStorage.
+
+## 📱 Responsive Design
+Built mobile-first and adapts beautifully across all screen sizes:
+
+- 📱 Mobile-friendly layout
+
+- 🖥️ Scales perfectly on desktop
+
+- 🧭 Touch-friendly buttons and modals
+
+
+## ⚙️ Customization Tips
+You can easily modify:
+
+- 🎨 Colors in the :root section of styles.css
+
+- 🆎 Font by changing the Google Fonts link in index.html
+
+- 🔣 Icons using Material Symbols
+
+
+
+| Action            | Icon         | Description                                    |
+| ----------------- | ------------ | ---------------------------------------------- |
+| **Add Task**      | ➕ `add_2`    | Opens a modal to add a new task                |
+| **Edit Task**     | ✏️ `edit`    | Edit existing task info in a modal             |
+| **Delete Task**   | 🗑️ `delete` | Opens a confirmation before deleting a task    |
+| **Complete Task** | ✅ `check`    | Marks a task as completed (green background)   |
+| **Cancel Task**   | ❌ `close`    | Reverts a completed task to its original state |
