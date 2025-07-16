@@ -2,6 +2,10 @@
 
 A simple, modern, and responsive **ToDo App** built with **HTML**, **CSS**, and **JavaScript**. This app helps users manage their daily tasks efficiently by allowing them to add, edit, delete, and mark tasks as complete. It uses **localStorage** for data persistence.
 
+
+## 📸 Live Preview
+[Live Preview Link](https://hibahdesu.github.io/ToDo-App/)
+
 ---
 
 ## 📸 Preview
