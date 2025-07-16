@@ -6,7 +6,7 @@ A simple, modern, and responsive **ToDo App** built with **HTML**, **CSS**, and 
 
 ## 📸 Preview
 
-![screenshot-placeholder](https://via.placeholder.com/800x400.png?text=ToDo+App+Screenshot)
+![preview](`public/preview.png`)
 
 ---
 
