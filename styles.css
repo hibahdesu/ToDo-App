@@ -10,15 +10,11 @@
     --shadow-2: 0px 6px 6px rgba(62, 88, 121, 0.3);
     --font: "Winky Rough", sans-serif;
 
-    /* ✅ Success / Done */
-    --success-color: #6DA57F;       /* muted green */
-    --success-bg: #E6F4EA;          /* light green background */
+    --success-color: #6DA57F;   
+    --success-bg: #E6F4EA;          
 
     --danger-color: #C94C4C;       
-
-    /* 🟡 Edit / Warning / Modify */
-    --edit-color: #D4A373;         /* warm amber */
-    --edit-bg: #FFF4E6;            /* soft beige-orange background */
+           
 }
 
 * {
@@ -29,7 +25,6 @@
 
 body {
     font-family: var(--font);
-    /* height: 100vh; */
     position: relative;
     margin: 2em 0;
 }
