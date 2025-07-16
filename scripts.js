@@ -77,7 +77,11 @@ taskBtn.addEventListener('click', (e) => {
             description: description,
             date: date,
             finished: false
-        })
+        });
+
+        let tasksString = JSON.stringify(tasks);
+
+        localStorage.setItem('tasks', tasksString)
 
         taskName.value = '';
         taskDesc.value = '';
