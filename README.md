@@ -72,6 +72,7 @@ You can easily modify:
 - 🔣 Icons using Material Symbols
 
 
+## 🎯 App Functionality Overview
 
 | Action            | Icon         | Description                                    |
 | ----------------- | ------------ | ---------------------------------------------- |
