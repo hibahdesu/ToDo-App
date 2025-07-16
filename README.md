@@ -6,11 +6,11 @@ A simple, modern, and responsive **ToDo App** built with **HTML**, **CSS**, and 
 
 ## 📸 Preview
 
-![preview](public/preview.png)
-![add](public/add.png)
-![update](public/update.png)
-![delete](public/delete.png)
-![done](public/done.png)
+![preview](./public/preview.png)
+![add](./public/add.png)
+![update](./public/update.png)
+![delete](./public/delete.png)
+![done](./public/done.png)
 
 ---
 
