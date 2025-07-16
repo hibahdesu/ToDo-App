@@ -3,7 +3,8 @@
 :root {
     --primary-color: #213555;
     --secondary-color: #F5EFE7;
-    --third-colr: #3E5879;
+    --third-color: #3E5879;
+    --third-color2:rgba(62, 88, 121, 0.7);
     --forth-color: #D8C4B6;
     --shadow: 0px 0px 10px rgba(62, 88, 121, 0.1);
     --shadow-2: 0px 6px 6px rgba(62, 88, 121, 0.3);
@@ -11,7 +12,8 @@
 
     --success-color: #6DA57F;   
     --success-bg: #E6F4EA;          
-    --danger-color: #C94C4C;       
+    --danger-color: #C94C4C;   
+    --danger-color2: rgba(201, 76, 76, 0.7); 
 }
 
 * {
@@ -166,10 +168,16 @@ button {
     background-color: var(--primary-color);
 }
 .delete {
+    background-color: var(--danger-color2);
+}
+.delete:hover{
     background-color: var(--danger-color);
 }
 .update {
-    background-color: var(--third-colr);
+    background-color: var(--third-color2);
+}
+.update:hover {
+    background-color: var(--third-color);
 }
 .done {
     background-color: var(--forth-color);
@@ -181,7 +189,7 @@ button {
 
 /* ===================== DATE ===================== */
 .date-container {
-    color: var(--third-colr);
+    color: var(--third-color);
     justify-content: flex-start;
 }
 
@@ -248,19 +256,20 @@ input:focus, textarea:focus {
     box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.1);
 }
 .delete-btn {
-    background: var(--danger-color);
+    background: var(--danger-color2);
 }
 .delete-btn:hover {
-    color: var(--danger-color);
-    border-color: var(--danger-color);
-    background: var(--forth-color);
+    color: var(--forth-color);
+    border-color: var(--forth-color);
+    background: var(--danger-color);
 }
-.cancle-btn {
-    background: var(--third-colr);
+.cancle-btn, .edit-btn {
+    background: var(--third-color);
+    color: var(--forth-color)
 }
-.cancle-btn:hover {
-    color: var(--third-colr);
-    border-color: var(--third-colr);
+.cancle-btn:hover, .edit-btn:hover {
+    color: var(--third-color);
+    border-color: var(--third-color);
     background: var(--forth-color);
 }
 
