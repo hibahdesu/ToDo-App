@@ -97,8 +97,14 @@ button {
     background: var(--forth-color);
     flex-direction: column;
     width: 80%;
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
 }
 
+.container, .header{
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+}
 .header {
     text-align: center;
     width: 100%;
