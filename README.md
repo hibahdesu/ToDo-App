@@ -34,7 +34,7 @@ A simple, modern, and responsive **ToDo App** built with **HTML**, **CSS**, and 
 
 ## 📂 Project Structure
 
-ToDo-App/
+### ToDo-App/
 │
 ├── index.html # Main HTML file
 ├── styles.css # App styling
