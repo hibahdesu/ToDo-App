@@ -6,11 +6,13 @@ let tasks = [
 function getTasksFromStorage() {
     retrievedTasks = JSON.parse(localStorage.getItem('tasks'));
 
-    if (retrievedTasks == null) {
-        tasks = [];
-    } else {
-        tasks = retrievedTasks;
-    }
+    tasks = retrievedTasks ?? []
+
+    // if (retrievedTasks == null) {
+    //     tasks = [];
+    // } else {
+    //     tasks = retrievedTasks;
+    // }
 }
 
 getTasksFromStorage();
@@ -92,7 +94,7 @@ let currentTaskIndex = null;
 
 function showTasks() {
     tasksContainer.innerHTML = tasks.map((task, index) => `
-        <div class="task flex space-between center gap-m ${task.finished ? 'finished' : ''}">
+        <div class="task flex space-between padding-m center gap-m ${task.finished ? 'finished' : ''}">
             <div class="task-content flex column gap-sm">
                 <h2>${task.title}</h2>
                 <p>${task.description}</p>
