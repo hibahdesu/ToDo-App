@@ -11,6 +11,7 @@
     --font: "Winky Rough", sans-serif;
 
     --success-color: #6DA57F;   
+    --success-color2: rgba(109, 165, 127, 0.7);   
     --success-bg: #E6F4EA;          
     --danger-color: #C94C4C;   
     --danger-color2: rgba(201, 76, 76, 0.7); 
@@ -107,6 +108,7 @@ button {
     color: var(--primary-color);
 }
 
+
 /* ===================== TASKS ===================== */
 .tasks-wrapper {
     max-height: 70vh;
@@ -168,6 +170,9 @@ button {
 .addBtn {
     background-color: var(--primary-color);
 }
+.addBtn:hover {
+    background-color: var(--third-color);
+}
 .delete {
     background-color: var(--danger-color2);
 }
@@ -181,7 +186,10 @@ button {
     background-color: var(--third-color);
 }
 .done {
-    background-color: var(--forth-color);
+    background-color: var(--success-color2);
+}
+.done:hover {
+    background-color: var(--success-color);
 }
 .finishedBtn {
     background-color: var(--success-bg);
@@ -218,7 +226,7 @@ button {
 }
 
 /* ===================== FORM ===================== */
-.task-btn, input, textarea, select {
+input, textarea, select {
     border: 1px solid var(--forth-color);
     box-shadow: var(--shadow);
     background: transparent;
@@ -235,7 +243,7 @@ input:focus, textarea:focus {
     border-color: var(--secondary-color);
 }
 
-.task-btn, .edit-btn {
+.task-btn, .edit-btn{
     background: var(--forth-color);
     color: var(--primary-color);
     font-family: var(--font);
@@ -266,11 +274,11 @@ input:focus, textarea:focus {
     border-color: var(--forth-color);
     background: var(--danger-color);
 }
-.cancle-btn, .edit-btn {
+.cancle-btn, .edit-btn, .task-btn {
     background: var(--third-color);
     color: var(--forth-color)
 }
-.cancle-btn:hover, .edit-btn:hover {
+.cancle-btn:hover, .edit-btn:hover, .task-btn:hover {
     color: var(--third-color);
     border-color: var(--third-color);
     background: var(--forth-color);
