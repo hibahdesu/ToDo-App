@@ -1,26 +1,19 @@
 let tasks = [
-    {
-        "title": "Complete the task",
-        "date": "2023-10-01",
-        "description": "Finish the assigned task by the end of the day.",
-        "finished": false
-    },
-    {
-        "title": "Task 2",
-        "date": "2023-10-01",
-        "description": "Finish the assigned task by the end of the day.",
-        "finished": false
-    },
-    {
-        "title": "Task 3",
-        "date": "2023-10-01",
-        "description": "Finish the assigned task by the end of the day.",
-        "finished": true
-    },
+    
 ];
 
 
-tasks = JSON.parse(localStorage.getItem('tasks'));
+function getTasksFromStorage() {
+    retrievedTasks = JSON.parse(localStorage.getItem('tasks'));
+
+    if (retrievedTasks == null) {
+        tasks = [];
+    } else {
+        tasks = retrievedTasks;
+    }
+}
+
+getTasksFromStorage();
 
 let tasksContainer = document.querySelector('.tasks-container');
 let addBtn = document.querySelector('.addBtn');
@@ -236,10 +229,9 @@ function finishedTask(index) {
     task.finished = !task.finished;
 
     storingTasks();
-    
+
     showTasks();
 }
-
 
 
 // Storage 
@@ -248,4 +240,5 @@ function storingTasks() {
 
     localStorage.setItem('tasks', tasksString);
 }
+
 showTasks();
